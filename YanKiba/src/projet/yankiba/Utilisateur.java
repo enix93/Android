@@ -4,24 +4,24 @@ package projet.yankiba;
 
 public class Utilisateur {
 
-	private String Pseudo;
-	private int numtel;
-	private int prefixe;
-	private int ID_USER;
+	protected String pseudo;
+	protected int numtel;
+	protected int prefixe;
+	protected int id_user;
 
-	public Utilisateur(String Pseudo,int numtel,int prefixe,int ID_USER ){
-		this.Pseudo=Pseudo;
+	public Utilisateur(int id_user,int numtel,int prefixe,String pseudo ){
+		this.pseudo=pseudo;
 		this.numtel=numtel;
 		this.prefixe=prefixe;
-		this.ID_USER=ID_USER;
+		this.id_user=id_user;
 	}
 
 	public String getPseudo() {
-		return Pseudo;
+		return pseudo;
 	}
 
 	public void setPseudo(String pseudo) {
-		Pseudo = pseudo;
+		this.pseudo = pseudo;
 	}
 
 	public int getNumtel() {
@@ -40,12 +40,14 @@ public class Utilisateur {
 		this.prefixe = prefixe;
 	}
 
-	public int getID_USER() {
-		return ID_USER;
+	public int getId_user() {
+		return id_user;
 	}
 
-	public void setID_USER(int iD_USER) {
-		ID_USER = iD_USER;
+	public void setId_user(int id_user) {
+		this.id_user = id_user;
 	}
+
+
 
 }
