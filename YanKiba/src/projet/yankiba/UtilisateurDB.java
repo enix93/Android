@@ -105,7 +105,7 @@ public class UtilisateurDB extends Utilisateur implements CRUD {
 		        CallableStatement cstmt=null;
 		        try{
 		        cstmt=dbConnect.prepareCall(req);
-		        //cstmt.registerOutParameter(1, oracle.jdbc.OracleTypes.CURSOR);
+		        cstmt.registerOutParameter(1, oracle.jdbc.OracleTypes.CURSOR);
 			cstmt.setInt(2,id_user);
 			cstmt.executeQuery();
 		        ResultSet rs=(ResultSet)cstmt.getObject(1);
