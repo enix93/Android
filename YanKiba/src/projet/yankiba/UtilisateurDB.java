@@ -6,21 +6,23 @@ import java.util.*;
 public class UtilisateurDB extends Utilisateur implements CRUD {
 
 	 protected static Connection dbConnect=null;
+	 protected int id_user;
 	 
 	
 	
 	public UtilisateurDB(int id_user, int numtel, int prefixe, String pseudo) {
-		super(id_user, numtel, prefixe, pseudo);
+		super( numtel, prefixe, pseudo);
+		this.id_user=id_user;
 		
 	}
 
 	public UtilisateurDB(int numtel,int prefixe,String pseudo){
-		super(0,numtel,prefixe,pseudo);
+		super(numtel,prefixe,pseudo);
 	}
 	
 	public UtilisateurDB(int id_user){
-		super(id_user,0,0,"");
-		
+		super(0,0,"");
+		this.id_user=id_user;
 	}
 
 	  public static void setConnection(Connection nouvdbConnect) {
