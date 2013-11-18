@@ -7,12 +7,16 @@ public class Utilisateur {
 	protected String pseudo;
 	protected int numtel;
 	protected int prefixe;
+	protected int id_user;
 
-
-	public Utilisateur(int numtel,int prefixe,String pseudo ){
+   public Utilisateur(){
+	   
+   }
+	public Utilisateur(int numtel,int prefixe,String pseudo,int id_user ){
 		this.pseudo=pseudo;
 		this.numtel=numtel;
 		this.prefixe=prefixe;
+		this.id_user=id_user;
 		
 	}
 
@@ -38,6 +42,14 @@ public class Utilisateur {
 
 	public void setPrefixe(int prefixe) {
 		this.prefixe = prefixe;
+	}
+
+	public int getId_user() {
+		return id_user;
+	}
+
+	public void setId_user(int id_user) {
+		this.id_user = id_user;
 	}
 
 

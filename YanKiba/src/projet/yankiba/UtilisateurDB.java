@@ -11,17 +11,17 @@ public class UtilisateurDB extends Utilisateur implements CRUD {
 	
 	
 	public UtilisateurDB(int id_user, int numtel, int prefixe, String pseudo) {
-		super( numtel, prefixe, pseudo);
-		this.id_user=id_user;
+		super( numtel, prefixe, pseudo,id_user);
+		
 		
 	}
 
 	public UtilisateurDB(int numtel,int prefixe,String pseudo){
-		super(numtel,prefixe,pseudo);
+		super(numtel,prefixe,pseudo,0);
 	}
 	
 	public UtilisateurDB(int id_user){
-		super(0,0,"");
+		super(0,0,"",0);
 		this.id_user=id_user;
 	}
 
@@ -38,8 +38,9 @@ public class UtilisateurDB extends Utilisateur implements CRUD {
 	        cstmt.setInt(2, numtel);
 	        cstmt.setInt(3, prefixe);
 	        cstmt.setString(4,pseudo);
-	        cstmt.executeUpdate();
 	        this.id_user=cstmt.getInt(1);
+	        cstmt.executeUpdate();
+	       
 	        
 	  }
 		  catch(Exception e ){
