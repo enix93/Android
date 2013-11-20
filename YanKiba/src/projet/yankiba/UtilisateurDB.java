@@ -1,14 +1,15 @@
 package projet.yankiba;
 
 import java.sql.*;
-import java.util.*;
 
 public class UtilisateurDB extends Utilisateur implements CRUD {
 
 	 protected static Connection dbConnect=null;
 	 protected int id_user;
 	 
-	
+	public UtilisateurDB(){
+		
+	}
 	
 	public UtilisateurDB(int id_user, int numtel, int prefixe, String pseudo) {
 		super( numtel, prefixe, pseudo,id_user);
@@ -28,7 +29,8 @@ public class UtilisateurDB extends Utilisateur implements CRUD {
 	  public static void setConnection(Connection nouvdbConnect) {
 	      dbConnect=nouvdbConnect;
 	   }
-	  public void create() throws Exception{
+	  @Override
+	public void create() throws Exception{
 		  CallableStatement   cstmt=null;
 		  try{
 	        
@@ -55,7 +57,8 @@ public class UtilisateurDB extends Utilisateur implements CRUD {
       }
 	
   }
-	  public void delete()throws Exception{
+	  @Override
+	public void delete()throws Exception{
 			
           CallableStatement cstmt =null;
 	   try{
@@ -76,7 +79,8 @@ public class UtilisateurDB extends Utilisateur implements CRUD {
            catch (Exception e){}
          }
   	}
-	  public void update() throws Exception{
+	  @Override
+	public void update() throws Exception{
 	        CallableStatement cstmt=null;
 
 	    try{
@@ -101,7 +105,8 @@ public class UtilisateurDB extends Utilisateur implements CRUD {
 	            catch (Exception e){}
 	        }
 	    }
-	  public void read ()throws Exception{
+	  @Override
+	public void read ()throws Exception{
 			
 			String req = "{?=call read_user(?)}";
 		        

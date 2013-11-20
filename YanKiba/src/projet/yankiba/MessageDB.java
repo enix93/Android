@@ -26,7 +26,8 @@ public class MessageDB extends Message implements CRUD {
 	      dbConnect=nouvdbConnect;
 	   }
 	 
-	 public void create() throws Exception{
+	 @Override
+	public void create() throws Exception{
 		 CallableStatement   cstmt=null;
 		 try{
 			 String req=" call create_message(?,?,?,?,?,?,?)";
@@ -54,7 +55,8 @@ public class MessageDB extends Message implements CRUD {
 	      }
 	
 	 }
-	 public void delete()throws Exception{
+	 @Override
+	public void delete()throws Exception{
 			
          CallableStatement cstmt =null;
 	   try{
@@ -76,7 +78,8 @@ public class MessageDB extends Message implements CRUD {
         }
  	}
 	 
-   public void update(){
+   @Override
+public void update(){
 	   /*Comme on ne peut pas update un sms(par soucis de logique),
 	     mais qu'il faut absolument avoir un update suite à l'implements CRUD,
 	    * on utilise une update vide
@@ -127,7 +130,8 @@ public class MessageDB extends Message implements CRUD {
 	   
    }
    
-   public void read(){
+   @Override
+public void read(){
 	   
    }
    
