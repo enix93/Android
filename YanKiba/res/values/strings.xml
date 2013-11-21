@@ -6,5 +6,10 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_chargement">Chargement</string>
     <string name="title_activity_chargement_base">ChargementBase</string>
+    <string name="phoneNumber" ></string><string name="producer">YanKiba Corp</string>
+    <string name="follow">OK</string>
+    <string name="cancel">Annuler </string>
+    <string name="pref"></string>
+    
 
 </resources>

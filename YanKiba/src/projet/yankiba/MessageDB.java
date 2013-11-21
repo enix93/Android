@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class MessageDB extends Message implements CRUD {
-	 protected int id_message;
+	 
 	 protected static Connection dbConnect=null;
 	 protected Son son;
 	 protected Emote emote;

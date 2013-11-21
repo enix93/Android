@@ -5,7 +5,7 @@ import java.sql.*;
 public class UtilisateurDB extends Utilisateur implements CRUD {
 
 	 protected static Connection dbConnect=null;
-	 protected int id_user;
+
 	 
 	public UtilisateurDB(){
 		
@@ -40,8 +40,8 @@ public class UtilisateurDB extends Utilisateur implements CRUD {
 	        cstmt.setInt(2, numtel);
 	        cstmt.setInt(3, prefixe);
 	        cstmt.setString(4,pseudo);
-	        this.id_user=cstmt.getInt(1);
 	        cstmt.executeUpdate();
+	        this.id_user=cstmt.getInt(1);
 	       
 	        
 	  }
