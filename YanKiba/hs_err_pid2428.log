@@ -1,0 +1,110 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (javaClasses.cpp:129), pid=2428, tid=5652
+#  fatal error: Invalid layout of preloaded class
+#
+# JRE version: 7.0_17-b02
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (23.7-b01 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000001eed000):  JavaThread "Unknown thread" [_thread_in_vm, id=5652, stack(0x00000000021e0000,0x00000000022e0000)]
+
+Stack: [0x00000000021e0000,0x00000000022e0000]
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x0000000001eed000 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=5652, stack(0x00000000021e0000,0x00000000022e0000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.006 loading class 0x0000000001e79120 done
+Event: 0.007 loading class 0x0000000001e32a50 done
+Event: 0.007 loading class 0x0000000001e32a20
+Event: 0.007 loading class 0x0000000001e82cc0
+Event: 0.007 loading class 0x0000000001e82cc0 done
+Event: 0.007 loading class 0x0000000001e82d00
+Event: 0.007 loading class 0x0000000001e82d00 done
+Event: 0.007 loading class 0x000000000a07ca60
+Event: 0.007 loading class 0x000000000a07ca60 done
+Event: 0.007 loading class 0x0000000001e32a20 done
+
+
+Dynamic libraries:
+0x000000013f920000 - 0x000000013f953000 	C:\Program Files\Java\jre7\bin\javaw.exe
+0x0000000077110000 - 0x00000000772b9000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000076ef0000 - 0x000000007700f000 	C:\Windows\system32\kernel32.dll
+0x000007fefd0c0000 - 0x000007fefd12b000 	C:\Windows\system32\KERNELBASE.dll
+0x000007fefd580000 - 0x000007fefd65b000 	C:\Windows\system32\ADVAPI32.dll
+0x000007feff320000 - 0x000007feff3bf000 	C:\Windows\system32\msvcrt.dll
+0x000007fefd410000 - 0x000007fefd42f000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefe9b0000 - 0x000007fefeadd000 	C:\Windows\system32\RPCRT4.dll
+0x0000000077010000 - 0x000000007710a000 	C:\Windows\system32\USER32.dll
+0x000007fefd7c0000 - 0x000007fefd827000 	C:\Windows\system32\GDI32.dll
+0x000007feff3c0000 - 0x000007feff3ce000 	C:\Windows\system32\LPK.dll
+0x000007fefd430000 - 0x000007fefd4f9000 	C:\Windows\system32\USP10.dll
+0x000007fefbac0000 - 0x000007fefbcb4000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_fa396087175ac9ac\COMCTL32.dll
+0x000007fefe930000 - 0x000007fefe9a1000 	C:\Windows\system32\SHLWAPI.dll
+0x000007fefe6d0000 - 0x000007fefe6fe000 	C:\Windows\system32\IMM32.DLL
+0x000007fefd830000 - 0x000007fefd939000 	C:\Windows\system32\MSCTF.dll
+0x000007fefce80000 - 0x000007fefceaf000 	C:\Windows\system32\nvinitx.dll
+0x000000005ffe0000 - 0x00000000600b1000 	C:\Program Files\Java\jre7\bin\msvcr100.dll
+0x000000005bac0000 - 0x000000005c1df000 	C:\Program Files\Java\jre7\bin\server\jvm.dll
+0x000007fef6b80000 - 0x000007fef6b89000 	C:\Windows\system32\WSOCK32.dll
+0x000007feff3d0000 - 0x000007feff41d000 	C:\Windows\system32\WS2_32.dll
+0x000007fefd400000 - 0x000007fefd408000 	C:\Windows\system32\NSI.dll
+0x000007fefb190000 - 0x000007fefb1cb000 	C:\Windows\system32\WINMM.dll
+0x00000000772e0000 - 0x00000000772e7000 	C:\Windows\system32\PSAPI.DLL
+0x0000000072910000 - 0x000000007291f000 	C:\Program Files\Java\jre7\bin\verify.dll
+0x000000006daf0000 - 0x000000006db18000 	C:\Program Files\Java\jre7\bin\java.dll
+0x000000006e2c0000 - 0x000000006e2d5000 	C:\Program Files\Java\jre7\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 -Xbootclasspath:C:\Users\Bahamut\AppData\Local\Android\android-sdk\platforms\android-18\android.jar 
+java_command: oracle.jdbc.driver.OracleSql
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+CLASSPATH=.;C:\Program Files (x86)\Java\jre7\lib\ext\QTJava.zip
+PATH=C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\oraclexe\app\oracle\product\10.2.0\server\bin;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\nodejs\C:\Program Files (x86)\MaxTV\MaxTV4\plugins;C:\wamp\bin\php\php5.4.12;;C:\Program Files (x86)\Intel\OpenCL SDK\3.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\3.0\bin\x64;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\RailsInstaller\Git\cmd;C:\RailsInstaller\Ruby1.9.3\bin;C:\Users\Bahamut\AppData\Roaming\npm;C:\Program Files (x86)\HMA! Pro VPN\bin;.;;.;;.;
+USERNAME=Bahamut
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, ht, tsc, tscinvbit, tscinv
+
+Memory: 4k page, physical 6175036k(2434180k free), swap 12348212k(7146656k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (23.7-b01) for windows-amd64 JRE (1.7.0_17-b02), built on Mar  1 2013 03:38:30 by "java_re" with unknown MS VC++:1600
+
+time: Wed Nov 20 15:07:03 2013
+elapsed time: 0 seconds
+

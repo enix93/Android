@@ -6,10 +6,15 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_chargement">Chargement</string>
     <string name="title_activity_chargement_base">ChargementBase</string>
-    <string name="phoneNumber" ></string><string name="producer">YanKiba Corp</string>
+    <string name="phoneNumber"></string>
+    <string name="producer">YanKiba Corp</string>
     <string name="follow">OK</string>
     <string name="cancel">Annuler </string>
     <string name="pref"></string>
-    
+    <string name="pseudo"></string>
+    <string name="insertion">Entrez le nom d \' utilisateur ici</string>
+    <string name="remarque">Bienvenu Dans l application YanKiba :D Veuillez entrez un nom d \' utilisateur ci-dessous</string>
+    <string name="title_activity_nouveau_user">NouveauUser</string>
+    <string name="title_activity_recherche">RechercheActivity</string>
 
 </resources>

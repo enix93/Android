@@ -2,6 +2,8 @@ package projet.yankiba;
 
 import java.sql.*;
 
+import android.util.Log;
+
 public class UtilisateurDB extends Utilisateur implements CRUD {
 
 	 protected static Connection dbConnect=null;
@@ -20,6 +22,10 @@ public class UtilisateurDB extends Utilisateur implements CRUD {
 	public UtilisateurDB(int numtel,int prefixe,String pseudo){
 		super(numtel,prefixe,pseudo,0);
 	}
+	  
+		public UtilisateurDB(int numtel,int prefixe){
+			super(numtel,prefixe,"",0);
+		}
 	
 	public UtilisateurDB(int id_user){
 		super(0,0,"",0);
@@ -106,38 +112,46 @@ public class UtilisateurDB extends Utilisateur implements CRUD {
 	        }
 	    }
 	  @Override
-	public void read ()throws Exception{
-			
-			String req = "{?=call read_user(?)}";
-		        
-		        CallableStatement cstmt=null;
-		        try{
-		        cstmt=dbConnect.prepareCall(req);
-		        cstmt.registerOutParameter(1, oracle.jdbc.OracleTypes.CURSOR);
-			cstmt.setInt(2,id_user);
-			cstmt.executeQuery();
-		        ResultSet rs=(ResultSet)cstmt.getObject(1);
-		        if(rs.next()){
-			     	this.id_user=rs.getInt("ID_USER");
-			     	this.numtel=rs.getInt("NUMTEL");
-			     	this.prefixe=rs.getInt("PREFIXE");
-			     	this.pseudo=rs.getString("PSEUDO");
-			        
-		              }
-			      else { 
-			             throw new Exception("ID Inconnu");
-			      }
+		public void read ()throws Exception{
+				
+				String req = "{?=call read_user(?,?)}";
+				    
+			        CallableStatement cstmt=null;
+			        try{
+			        cstmt=dbConnect.prepareCall(req);
+			        Log.d("essai","lol");
+			        cstmt.registerOutParameter(1, oracle.jdbc.OracleTypes.CURSOR);
+			        cstmt.setInt(2,prefixe);
+					cstmt.setInt(3, numtel);
+				    cstmt.executeQuery();
+				    Log.d("essai2","lol");
+			        ResultSet rs=(ResultSet)cstmt.getObject(1);
+			        if(rs.next()){
+			        	Log.d("essai3","lol");
+				     	this.id_user=rs.getInt("ID_USER");
+				     	Log.d("essai4",Integer.toString(id_user)+"lol");
+				     	this.numtel=rs.getInt("NUMTEL");
+				     	Log.d("essai5",Integer.toString(numtel)+"lol");
+				     	this.prefixe=rs.getInt("PREFIXE");
+				     	Log.d("essai6",Integer.toString(prefixe)+"lol");
+				     	this.pseudo=rs.getString("PSEUDO");
+				     	Log.d("essai7",pseudo+"lol");
+				        
+			              }
+				      else { 
+				             throw new Exception("ID Inconnu");
+				      }
 
-		            }
-			catch(Exception e){
-		             
-		                throw new Exception("Erreur de lecture "+e.getMessage());
-		             }
-		        finally{//effectué dans tous les cas 
-		            try{
-		              cstmt.close();
-		            }
-		            catch (Exception e){}
-		        }
-		     }
+			            }
+				catch(Exception e){
+			             
+			                throw new Exception("Erreur de lecture "+e.getMessage());
+			             }
+			        finally{//effectué dans tous les cas 
+			            try{
+			              cstmt.close();
+			            }
+			            catch (Exception e){}
+			        }
+			     }
 }
