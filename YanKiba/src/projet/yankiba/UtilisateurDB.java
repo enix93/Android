@@ -2,9 +2,11 @@ package projet.yankiba;
 
 import java.sql.*;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.util.Log;
 
-public class UtilisateurDB extends Utilisateur implements CRUD {
+public class UtilisateurDB extends Utilisateur implements CRUD,Parcelable {
 
 	 protected static Connection dbConnect=null;
 
@@ -39,7 +41,7 @@ public class UtilisateurDB extends Utilisateur implements CRUD {
 	public void create() throws Exception{
 		  CallableStatement   cstmt=null;
 		  try{
-	        
+			Log.d("on est icieeeeee","lol");
 	        String req=" call create_user(?,?,?,?)";
 	        cstmt=dbConnect.prepareCall(req);
 	        cstmt.registerOutParameter(1, java.sql.Types.INTEGER);
@@ -154,4 +156,35 @@ public class UtilisateurDB extends Utilisateur implements CRUD {
 			            catch (Exception e){}
 			        }
 			     }
+	//int id_user, int numtel, int prefixe, String pseudo
+		
+		@Override
+		 public int describeContents() {
+		   //On renvoie 0, car notre classe ne contient pas de FileDescriptor
+		   return 0;
+		 }
+		 @Override
+		 public void writeToParcel(Parcel dest, int flags) {
+		   // On ajoute les objets dans l'ordre dans lequel on les a déclarés
+		   dest.writeInt(id_user);
+		   dest.writeInt(numtel);
+		   dest.writeInt(prefixe);
+		   dest.writeString(pseudo);
+		 }
+		 public static final Parcelable.Creator<UtilisateurDB> CREATOR = new Parcelable.Creator<UtilisateurDB>() {
+		   @Override
+		   public UtilisateurDB createFromParcel(Parcel source) {
+		     return new UtilisateurDB(source);
+		   }
+		   @Override
+		   public UtilisateurDB[] newArray(int size) {
+		     return new UtilisateurDB[size];
+		   }
+		 };
+		 public UtilisateurDB(Parcel in) {
+		 	  id_user = in.readInt();
+		 	  numtel = in.readInt();
+		 	  prefixe = in.readInt();
+		 	  pseudo=in.readString();
+		 	}
 }

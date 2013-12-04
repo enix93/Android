@@ -16,5 +16,9 @@
     <string name="remarque">Bienvenu Dans l application YanKiba :D Veuillez entrez un nom d \' utilisateur ci-dessous</string>
     <string name="title_activity_nouveau_user">NouveauUser</string>
     <string name="title_activity_recherche">RechercheActivity</string>
+    <string name="title_activity_menu">Menu</string>
+    <string name="title_activity_main_page">MainPage</string>
+    <string name="recherche">Recherche</string>
+    <string name="chat">Chat</string>
 
 </resources>
