@@ -45,6 +45,10 @@
             android:name="projet.yankiba.MainPage"
             android:label="@string/title_activity_main_page" >
         </activity>
+        <activity
+            android:name="projet.yankiba.ChatActivity"
+            android:label="@string/title_activity_chat" >
+        </activity>
     </application>
 
 </manifest>

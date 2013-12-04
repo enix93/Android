@@ -20,5 +20,13 @@
     <string name="title_activity_main_page">MainPage</string>
     <string name="recherche">Recherche</string>
     <string name="chat">Chat</string>
+    <string name="strBtnChat">Chat</string>
+    <string name="strBtnRecherche">Rechercher</string>
+    <string name="title_activity_chat">ChatActivity</string>
+    <string name="editRech">Pseudo</string>
+    <string name="btnEnvoi">Envoyer</string>
+    <string name="hintEditMsg">Entrer un message</string>
+    <string name="RechResult">Resultat: </string>
+    <string name="refresh">Actualiser</string>
 
 </resources>
