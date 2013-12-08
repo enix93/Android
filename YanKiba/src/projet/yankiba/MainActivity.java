@@ -23,7 +23,8 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	private  Button OK ;
-	private  Button mButton2 = null;
+	private  Button cancel;
+	private Button alert;
 	private TextView number=null;
 	private TextView pref=null;
 	private int telephone;
@@ -42,7 +43,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		mTelephonyMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-		 String yourNumber = mTelephonyMgr.getLine1Number(); 
+		String yourNumber =mTelephonyMgr.getLine1Number();
 		telephone= Integer.parseInt(yourNumber.substring(3));
 		prefixeReduit=Integer.parseInt(yourNumber.substring(1,3));
 		MyAccesDB adb = new MyAccesDB(MainActivity.this);
@@ -50,6 +51,7 @@ public class MainActivity extends Activity {
 		DBConnection dbc=new DBConnection();
 	    Connection connect=dbc.getConnection();
 	    UtilisateurDB.setConnection(connect);
+	    cancel=(Button)findViewById(R.id.cancel);
 	    rentrer =(EditText) findViewById(R.id.rentrer);
 		OK=(Button)findViewById(R.id.follow);
 	    OK.setOnClickListener(new OnClickListener() {
@@ -58,8 +60,16 @@ public class MainActivity extends Activity {
   				efg.execute();
   			}
   			});
+	    
+	    cancel.setOnClickListener(new OnClickListener() {
+  			public void onClick(View v) {
+  				rentrer.setText("Entrez un nom");
+  			}
+  			});
 		
 	}
+	
+	
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -102,13 +112,13 @@ public class MainActivity extends Activity {
 				
 			} catch (Exception e) {
 			}
-			 if(test.getPseudo()!=""){
+			 if(test.getPseudo()!=""&&test.getPseudo()!=null){
 		    	 Intent i = new Intent(MainActivity.this, MainPage.class);
 					i.putExtra(Uuser,test);
 					startActivity(i);
 		     }
 		     else{
-		    	  
+		    	
 		     }
 			return true;
 		}
@@ -159,12 +169,15 @@ public class MainActivity extends Activity {
 		     if(test.getPseudo()!=""){
 		    	 Intent i = new Intent(MainActivity.this, MainPage.class);
 					i.putExtra(Uuser,test);
+					
 					startActivity(i);
+					finish();
 		     }
 		     else{
-		    	  
+		   
 		     }
 		     
 		}
 	}
+	
 }

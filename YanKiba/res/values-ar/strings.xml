@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">YanKiba</string>
+    <string name="action_settings">معلم</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_chargement">Yankiba</string>
+    <string name="title_activity_chargement_base">Yankiba</string>
+    <string name="phoneNumber"></string>
+    <string name="producer">YanKiba Corp</string>
+    <string name="follow">نعم</string>
+    <string name="cancel">إلغاء</string>
+    <string name="pref"></string>
+    <string name="pseudo"></string>
+    <string name="insertion">أدخل إسم المستعمل هنا</string>
+    <string name="remarque">مرحبا بكم في التطبيق يانكيبا الرجاء إدخال اسم المستخدم أدناه</string>
+    <string name="title_activity_nouveau_user">Yankiba</string>
+    <string name="title_activity_recherche">Yankiba</string>
+    <string name="title_activity_menu">Menu</string>
+    <string name="title_activity_main_page">Yankiba</string>
+    <string name="recherche">بحت</string>
+    <string name="chat">خروج</string>
+    <string name="strBtnChat">شاط</string>
+    <string name="strBtnRecherche">بحت</string>
+    <string name="title_activity_chat">Yankiba</string>
+    <string name="editRech">لقب</string>
+    <string name="btnEnvoi">إبعت</string>
+    <string name="hintEditMsg">أدخل بلاغ</string>
+    <string name="RechResult">نتيجة: </string>
+    <string name="refresh">تحديت</string>
+
+</resources>

@@ -36,9 +36,10 @@ public class MainPage extends Activity {
 	   
 	       chat.setOnClickListener(new OnClickListener() {
 	  			public void onClick(View v) {
-	  				i = new Intent(MainPage.this, ChatActivity.class);
-	  				i.putExtra(Uuser,Utilisateur);
-						startActivity(i);
+	  				Intent intent = new Intent(Intent.ACTION_MAIN);
+	  				intent.addCategory(Intent.CATEGORY_HOME);
+	  				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+	  				startActivity(intent);
 	  				
 	  			}
 	  			});
@@ -52,6 +53,9 @@ public class MainPage extends Activity {
 	  			}
 	  			});
 	     
+	}
+	@Override
+	public void onBackPressed() {
 	}
 
 	@Override

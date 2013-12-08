@@ -70,5 +70,6 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="22dp"
         android:text="@string/remarque"/>
+    
 
 </RelativeLayout>
